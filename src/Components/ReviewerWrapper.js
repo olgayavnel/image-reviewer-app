@@ -19,11 +19,12 @@ const Section = styled.section`
 `;
 
 const Header = styled.div`
-  background-color: #ed87e48e;
+  background-color: blanchedalmond;
   padding-bottom: 1rem;
   border-bottom: 1px solid white;
   display: flex;
   justify-content: center;
+  border-radius: 10px;
 `;
 
 function ReviewerWrapper({ imageList }) {

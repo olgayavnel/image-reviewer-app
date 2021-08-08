@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const ImagePickerWrapper = styled.div`
-  background-color: #a6ffea;
+  background-color: #f3cdff;
+  border-radius: 10px;
   padding-bottom: 1rem;
   border-bottom: 1px solid white;
   display: flex;
