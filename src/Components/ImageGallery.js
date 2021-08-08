@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 const ImageGalleryWrapper = styled.div`
   background-color: #fec571;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
 `;
-const ImageGalleryHeader = styled.h4``;
+const ImageGalleryHeader = styled.p``;
 
 function ImageGallery() {
   return (
