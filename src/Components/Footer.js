@@ -4,6 +4,9 @@ import styled from 'styled-components';
 const FooterWrapper = styled.div`
   background-color: blanchedalmond;
   border-bottom: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const FooterCopy = styled.p``;
 

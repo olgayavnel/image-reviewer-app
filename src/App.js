@@ -5,14 +5,19 @@ function App() {
   const [imageList, setImageList] = useState([]);
 
   useEffect(() => {
-    const url =
-      'https://api.unsplash.com/search/photos?query=london&client_id=12nQgPUTls3doSFIK6UFHBp-Xap2DqGYtCNvprFKoY0';
-    fetch(url)
+    let clientID = '12nQgPUTls3doSFIK6UFHBp-Xap2DqGYtCNvprFKoY0';
+    const endpoint = `https://api.unsplash.com/photos/random/?client_id=${clientID}`;
+
+    fetch(endpoint)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        setImageList(data);
+        setImageList(data.urls.regular);
+        console.log(data.urls.regular);
+      })
+      .catch((err) => {
+        console.log('Error: ' + err);
       });
   }, []);
 

@@ -5,8 +5,12 @@ const ImageGalleryWrapper = styled.div`
   background-color: #fec571;
   padding-bottom: 1rem;
   border-bottom: 1px solid white;
+  display: flex;
+  justify-content: left;
 `;
-const ImageGalleryHeader = styled.p``;
+const ImageGalleryHeader = styled.p`
+  margin-left: 1rem;
+`;
 
 function ImageGallery() {
   return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const ImagePickerWrapper = styled.div`
@@ -9,6 +9,16 @@ const ImagePickerWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+
+  img {
+    max-height: 400px;
+    margin: 0.5rem;
+    border-radius: 10px;
+  }
 `;
 
 const Button = styled.button`
@@ -22,12 +32,16 @@ const Button = styled.button`
 `;
 
 function ImagePicker({ imageList }) {
-  console.log(imageList.results);
-
+  const [fetchedImage, setFetchedImage] = useState('');
   return (
     <ImagePickerWrapper>
-      <p>FETCH AN IMAGE FROM THE API</p>
-      <Button>+</Button>
+      {fetchedImage ? (
+        <ImageContainer>
+          <img id='unsplashImage' alt='unsplashImage' src={fetchedImage} />
+        </ImageContainer>
+      ) : (
+        <Button onClick={() => setFetchedImage(imageList)}>+</Button>
+      )}
     </ImagePickerWrapper>
   );
 }
