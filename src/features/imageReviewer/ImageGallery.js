@@ -32,8 +32,8 @@ function ImageGallery() {
     <ImageGalleryWrapper>
       <ImageGalleryHeader>APPROVED IMAGES (0)</ImageGalleryHeader>
       <ImageContainer>
-        {imageUrls.map((image) => (
-          <img src={image} alt='' />
+        {imageUrls.map((image, index) => (
+          <img key={index} src={image} alt='' />
         ))}
       </ImageContainer>
     </ImageGalleryWrapper>

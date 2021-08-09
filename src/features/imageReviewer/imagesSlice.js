@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   approvedImageList: [],
   rejectedImageList: [],
+  showButton: true,
 };
 
 /** A function createSlice takes care of the work of generating
@@ -17,14 +18,14 @@ const imagesSlice = createSlice({
     },
     imageRejected(state, action) {
       state.rejectedImageList.push(action.payload);
-      console.log(
-        '🚀 ~ file: imagesSlice.js ~ line 20 ~ imageRejected ~ action.payload',
-        action.payload
-      );
+    },
+    buttonClicked(state) {
+      state.showButton = false;
     },
   },
 });
 
-export const { imageApproved, imageRejected } = imagesSlice.actions;
+export const { imageApproved, imageRejected, buttonClicked } =
+  imagesSlice.actions;
 
 export default imagesSlice.reducer;

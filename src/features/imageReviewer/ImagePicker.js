@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { selectImage } from './imagesSlice';
+import { useDispatch } from 'react-redux';
+import { buttonClicked } from './imagesSlice';
 
 const ImagePickerWrapper = styled.div`
   background-color: #f3cdff;
@@ -36,21 +37,21 @@ const Button = styled.button`
 `;
 
 function ImagePicker({ imageList }) {
-  const [isHidden, setIsHidden] = useState(true);
+  const dispatch = useDispatch();
+  const showButton = useSelector((state) => state.images.showButton);
+
+  function onButtonClick() {
+    dispatch(buttonClicked(!showButton));
+  }
+
   return (
     <ImagePickerWrapper>
-      {/* {!isHidden && (
-        <ImageContainer>
-          <img id='unsplashImage' alt='unsplashImage' src={imageList[0]} />
-        </ImageContainer>
-      )}
-      <Button onClick={() => setIsHidden(false)}>+</Button> */}
-      {!isHidden ? (
+      {!showButton ? (
         <ImageContainer>
           <img id='unsplashImage' alt='unsplashImage' src={imageList[0]} />
         </ImageContainer>
       ) : (
-        <Button onClick={() => setIsHidden(false)}>+</Button>
+        <Button onClick={onButtonClick}>+</Button>
       )}
     </ImagePickerWrapper>
   );
