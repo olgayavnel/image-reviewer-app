@@ -16,6 +16,13 @@ const Section = styled.section`
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   font-size: 1.2rem;
+  /* position: relative; */
+  overflow: auto;
+  /* white-space: nowrap; */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const Header = styled.div`
@@ -27,8 +34,7 @@ const Header = styled.div`
   border-radius: 10px;
 `;
 
-function ReviewerWrapper({ imageList }) {
-  console.log(imageList);
+function ImageReviewerWrapper({ imageList, generateNewRandomImage }) {
   return (
     <Section>
       <Header>
@@ -36,9 +42,9 @@ function ReviewerWrapper({ imageList }) {
       </Header>
       <ImageGallery />
       <ImagePicker imageList={imageList} />
-      <Footer />
+      <Footer imageList={imageList} {...{ generateNewRandomImage }} />
     </Section>
   );
 }
 
-export default ReviewerWrapper;
+export default ImageReviewerWrapper;

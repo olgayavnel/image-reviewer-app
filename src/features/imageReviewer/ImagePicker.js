@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
+import { selectImage } from './imagesSlice';
 
 const ImagePickerWrapper = styled.div`
   background-color: #f3cdff;
@@ -14,6 +16,7 @@ const ImagePickerWrapper = styled.div`
 
 const ImageContainer = styled.div`
   display: flex;
+  flex: 0 2;
 
   img {
     max-height: 400px;
@@ -33,15 +36,21 @@ const Button = styled.button`
 `;
 
 function ImagePicker({ imageList }) {
-  const [fetchedImage, setFetchedImage] = useState('');
+  const [isHidden, setIsHidden] = useState(true);
   return (
     <ImagePickerWrapper>
-      {fetchedImage ? (
+      {/* {!isHidden && (
         <ImageContainer>
-          <img id='unsplashImage' alt='unsplashImage' src={fetchedImage} />
+          <img id='unsplashImage' alt='unsplashImage' src={imageList[0]} />
+        </ImageContainer>
+      )}
+      <Button onClick={() => setIsHidden(false)}>+</Button> */}
+      {!isHidden ? (
+        <ImageContainer>
+          <img id='unsplashImage' alt='unsplashImage' src={imageList[0]} />
         </ImageContainer>
       ) : (
-        <Button onClick={() => setFetchedImage(imageList)}>+</Button>
+        <Button onClick={() => setIsHidden(false)}>+</Button>
       )}
     </ImagePickerWrapper>
   );

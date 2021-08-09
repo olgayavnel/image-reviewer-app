@@ -1,27 +1,62 @@
-import ReviewerWrapper from './Components/ReviewerWrapper';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import ImageReviewerWrapper from './features/imageReviewer/ImageReviewerWrapper';
 
 function App() {
-  const [imageList, setImageList] = useState([]);
+  const [loading, randomImageUrl, generateNewRandomImage] =
+    useFetchRandomImage();
 
-  useEffect(() => {
-    let clientID = '12nQgPUTls3doSFIK6UFHBp-Xap2DqGYtCNvprFKoY0';
-    const endpoint = `https://api.unsplash.com/photos/random/?client_id=${clientID}`;
+  return (
+    <>
+      {randomImageUrl && (
+        <ImageReviewerWrapper
+          imageList={[randomImageUrl]}
+          generateNewRandomImage={generateNewRandomImage}
+        />
+      )}
+    </>
+  );
+}
 
-    fetch(endpoint)
+export default App;
+
+const CLIENT_ID = '_XeMMYyyWnlZpijeurQn5eqrL4RFC7PfDGBk0_7OzX8';
+const ENDPOINT = `https://api.unsplash.com/photos/random/?client_id=${CLIENT_ID}`;
+
+// import {atom} from 'jotai'
+
+// const randomImageUrlAtom = atom("")
+
+function useFetchRandomImage() {
+  const [loading, setLoading] = useState(false);
+  const [randomImageUrl, setImgUrl] = useState('');
+  const rejectedImageList = useSelector(
+    (state) => state.images.rejectedImageList
+  );
+
+  function fetchAndSaveRandomImage() {
+    setLoading(true);
+    fetch(ENDPOINT)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        setImageList(data.urls.regular);
-        console.log(data.urls.regular);
+        const newUrl = data.urls.regular;
+        if (rejectedImageList.includes(newUrl)) {
+          // fetch again
+          fetchAndSaveRandomImage();
+          return;
+        }
+        setLoading(false);
+        setImgUrl(data.urls.regular);
       })
       .catch((err) => {
         console.log('Error: ' + err);
       });
-  }, []);
+  }
 
-  return <>{imageList && <ReviewerWrapper imageList={imageList} />}</>;
+  // do it right away once
+  useEffect(fetchAndSaveRandomImage, []);
+
+  return [loading, randomImageUrl, fetchAndSaveRandomImage];
 }
-
-export default App;
