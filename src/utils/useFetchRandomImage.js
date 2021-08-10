@@ -13,6 +13,10 @@ export function useFetchRandomImage() {
     (state) => state.images.rejectedImageList
   );
 
+  const approvedImageList = useSelector(
+    (state) => state.images.approvedImageList
+  );
+
   function generateNewRandomImage() {
     setIsLoading(true);
     fetch(ENDPOINT)
@@ -21,7 +25,10 @@ export function useFetchRandomImage() {
       })
       .then((data) => {
         const newUrl = data.urls.regular;
-        if (rejectedImageList.includes(newUrl)) {
+        if (
+          rejectedImageList.includes(newUrl) ||
+          approvedImageList.includes(newUrl)
+        ) {
           // fetch again
           generateNewRandomImage();
           return;

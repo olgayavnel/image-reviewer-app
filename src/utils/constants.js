@@ -1,2 +1,2 @@
-const CLIENT_ID = 'DnCm3t54SOxzqGdN53NtWkhbsbc1e2Set4E3waAY0FA';
+const CLIENT_ID = '76_LGLggQYQZlfd8zKhXeGy_Es_u-dxzjQaGqYyVD_k';
 export const ENDPOINT = `https://api.unsplash.com/photos/random/?client_id=${CLIENT_ID}`;

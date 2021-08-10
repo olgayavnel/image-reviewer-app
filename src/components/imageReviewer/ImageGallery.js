@@ -2,20 +2,24 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-const ImageGalleryWrapper = styled.div`
+const ImageCarouselWrapper = styled.div`
   background-color: blanchedalmond;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: left;
+  overflow: auto;
+  white-space: nowrap;
 `;
-const ImageGalleryHeader = styled.p`
+const ImageCarouselHeader = styled.p`
   margin-left: 1rem;
 `;
 const ImageContainer = styled.div`
-  display: flex;
-  margin-left: 1rem;
-  overflow-y: auto;
+  display: inline;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   img {
     max-height: 100px;
@@ -24,23 +28,19 @@ const ImageContainer = styled.div`
   }
 `;
 
-function ImageGallery() {
+function ImageCarousel() {
   const imageUrls = useSelector((state) => state.images.approvedImageList);
-  console.log(
-    '🚀 ~ file: ImageGallery.js ~ line 30 ~ ImageGallery ~ imageUrls',
-    imageUrls
-  );
 
   return (
-    <ImageGalleryWrapper>
-      <ImageGalleryHeader>APPROVED IMAGES (0)</ImageGalleryHeader>
+    <ImageCarouselWrapper>
+      <ImageCarouselHeader>APPROVED IMAGES (0)</ImageCarouselHeader>
       <ImageContainer>
         {imageUrls.map((image, index) => (
           <img key={index} src={image} alt='' />
         ))}
       </ImageContainer>
-    </ImageGalleryWrapper>
+    </ImageCarouselWrapper>
   );
 }
 
-export default ImageGallery;
+export default ImageCarousel;
