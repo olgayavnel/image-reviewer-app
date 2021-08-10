@@ -1,7 +1,7 @@
-import ImageReviewerWrapper from './features/imageReviewer/ImageReviewerWrapper';
 import { useFetchRandomImage } from './utils/useFetchRandomImage';
 import './App.css';
-import Spinner from './features/imageReviewer/Spinner';
+import ImageReviewerWrapper from './components/imageReviewer/ImageReviewerWrapper';
+import Spinner from './components/genericComponents/Spinner';
 
 function App() {
   const [isLoading, randomImageUrl, generateNewRandomImage] =

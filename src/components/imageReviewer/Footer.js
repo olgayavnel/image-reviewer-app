@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { imageApproved, imageRejected } from './imagesSlice';
-import { Button } from './Button';
+import { imageApproved, imageRejected } from '../../store/slices/imagesSlice';
+import { Button } from '../genericComponents/Button';
 
 const FooterWrapper = styled.div`
   background-color: blanchedalmond;
@@ -32,7 +32,7 @@ function Footer({ randomImageUrl, generateNewRandomImage }) {
     generateNewRandomImage();
   }
 
-  const showButton = useSelector((state) => state.images.showButton);
+  const showButton = useSelector((state) => state.buttons.showButton);
 
   return (
     <FooterWrapper>

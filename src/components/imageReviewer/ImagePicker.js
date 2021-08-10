@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { buttonClicked } from './imagesSlice';
-import { Button } from './Button';
+import { buttonClicked } from './../../store/slices/buttonsSlice';
+import { Button } from '../genericComponents/Button';
 
 const ImagePickerWrapper = styled.div`
   background-color: #fbebcd;
@@ -27,7 +27,7 @@ const ImageContainer = styled.div`
 
 function ImagePicker({ randomImageUrl }) {
   const dispatch = useDispatch();
-  const showButton = useSelector((state) => state.images.showButton);
+  const showButton = useSelector((state) => state.buttons.showButton);
 
   function onButtonClick() {
     dispatch(buttonClicked(!showButton));
