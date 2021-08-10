@@ -27,6 +27,10 @@ const ImageContainer = styled.div`
 
 function ImageGallery() {
   const imageUrls = useSelector((state) => state.images.approvedImageList);
+  console.log(
+    '🚀 ~ file: ImageGallery.js ~ line 30 ~ ImageGallery ~ imageUrls',
+    imageUrls
+  );
 
   return (
     <ImageGalleryWrapper>

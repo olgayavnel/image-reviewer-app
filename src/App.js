@@ -23,16 +23,16 @@ export default App;
 const CLIENT_ID = 's-FByqtV_QBpcbqo_5yofSyHl_mVGo0uQbTQtquCNK0';
 const ENDPOINT = `https://api.unsplash.com/photos/random/?client_id=${CLIENT_ID}`;
 
-// import {atom} from 'jotai'
-
-// const randomImageUrlAtom = atom("")
-
 function useFetchRandomImage() {
   const [loading, setLoading] = useState(false);
   const [randomImageUrl, setImgUrl] = useState('');
 
   const rejectedImageList = useSelector(
     (state) => state.images.rejectedImageList
+  );
+  console.log(
+    '🚀 ~ file: App.js ~ line 33 ~ useFetchRandomImage ~ rejectedImageList',
+    rejectedImageList
   );
 
   function fetchAndSaveRandomImage() {

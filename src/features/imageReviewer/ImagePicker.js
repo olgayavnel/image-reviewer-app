@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { buttonClicked } from './imagesSlice';
+import { Button } from './Button';
 
 const ImagePickerWrapper = styled.div`
-  background-color: #f3cdff;
+  background-color: #fbebcd;
   border-radius: 10px;
   padding-bottom: 1rem;
   border-bottom: 1px solid white;
@@ -17,23 +18,13 @@ const ImagePickerWrapper = styled.div`
 
 const ImageContainer = styled.div`
   display: flex;
-  flex: 0 2;
 
   img {
     max-height: 400px;
     margin: 0.5rem;
     border-radius: 10px;
+    object-fit: cover;
   }
-`;
-
-const Button = styled.button`
-  width: 400px;
-  height: 200px;
-  padding: 1rem;
-  border: none;
-  border-radius: 10px;
-  background-color: aliceblue;
-  font-size: 2rem;
 `;
 
 function ImagePicker({ imageList }) {
@@ -51,7 +42,9 @@ function ImagePicker({ imageList }) {
           <img id='unsplashImage' alt='unsplashImage' src={imageList[0]} />
         </ImageContainer>
       ) : (
-        <Button onClick={onButtonClick}>+</Button>
+        <Button large='true' bgColorOnHover='true' onClick={onButtonClick}>
+          +
+        </Button>
       )}
     </ImagePickerWrapper>
   );

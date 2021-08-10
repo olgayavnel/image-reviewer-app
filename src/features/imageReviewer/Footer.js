@@ -1,10 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
+
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 
 import { imageApproved, imageRejected } from './imagesSlice';
+import { Button } from './Button';
 
 const FooterWrapper = styled.div`
   background-color: blanchedalmond;
@@ -14,7 +16,9 @@ const FooterWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 const FooterCopy = styled.p``;
+const ButtonWrapper = styled.div``;
 
 function Footer({ imageList, generateNewRandomImage }) {
   const dispatch = useDispatch();
@@ -34,13 +38,20 @@ function Footer({ imageList, generateNewRandomImage }) {
 
   return (
     <FooterWrapper>
-      {showButton && (
+      {showButton ? (
         <FooterCopy>
           Click on the + in order to get image recommendations
         </FooterCopy>
+      ) : (
+        <ButtonWrapper>
+          <Button bgColorOnHover='true' onClick={onApprove}>
+            APPROVE
+          </Button>
+          <Button bgColorOnHover='true' onClick={onReject}>
+            REJECT
+          </Button>
+        </ButtonWrapper>
       )}
-      <button onClick={onApprove}>APPROVE</button>
-      <button onClick={onReject}>REJECT</button>
     </FooterWrapper>
   );
 }
