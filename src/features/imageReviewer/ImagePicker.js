@@ -9,13 +9,11 @@ const ImagePickerWrapper = styled.div`
   background-color: #fbebcd;
   border-radius: 10px;
   padding-bottom: 1rem;
-  border-bottom: 1px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
-
 const ImageContainer = styled.div`
   display: flex;
 
@@ -27,7 +25,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-function ImagePicker({ imageList }) {
+function ImagePicker({ randomImageUrl }) {
   const dispatch = useDispatch();
   const showButton = useSelector((state) => state.images.showButton);
 
@@ -39,7 +37,7 @@ function ImagePicker({ imageList }) {
     <ImagePickerWrapper>
       {!showButton ? (
         <ImageContainer>
-          <img id='unsplashImage' alt='unsplashImage' src={imageList[0]} />
+          <img id='unsplashImage' alt='unsplashImage' src={randomImageUrl} />
         </ImageContainer>
       ) : (
         <Button large='true' bgColorOnHover='true' onClick={onButtonClick}>

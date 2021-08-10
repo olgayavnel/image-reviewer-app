@@ -6,7 +6,6 @@ const ImageGalleryWrapper = styled.div`
   background-color: blanchedalmond;
   padding-bottom: 1rem;
   border-radius: 10px;
-  border-bottom: 1px solid white;
   display: flex;
   flex-direction: column;
   justify-content: left;

@@ -1,36 +1,31 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
-
 import { imageApproved, imageRejected } from './imagesSlice';
 import { Button } from './Button';
 
 const FooterWrapper = styled.div`
   background-color: blanchedalmond;
   border-radius: 10px;
-  border-bottom: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-
 const FooterCopy = styled.p``;
 const ButtonWrapper = styled.div``;
 
-function Footer({ imageList, generateNewRandomImage }) {
+function Footer({ randomImageUrl, generateNewRandomImage }) {
   const dispatch = useDispatch();
 
   function onApprove() {
-    dispatch(imageApproved(imageList[0]));
+    dispatch(imageApproved(randomImageUrl));
     generateNewRandomImage();
   }
 
   function onReject() {
     // under the question ?
-    dispatch(imageRejected(imageList[0]));
+    dispatch(imageRejected(randomImageUrl));
     generateNewRandomImage();
   }
 
