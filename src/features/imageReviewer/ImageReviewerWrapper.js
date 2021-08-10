@@ -6,7 +6,7 @@ import ImagePicker from './ImagePicker';
 
 const Section = styled.section`
   background-color: #d1defe;
-  height: auto;
+  height: 100vh;
   width: 600px;
   margin: 1rem auto;
   padding: 0.5rem;
