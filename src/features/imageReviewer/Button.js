@@ -13,7 +13,7 @@ export const Button = styled.button`
   background-color: ${({ large }) => (large ? 'aliceblue' : '')};
   border-radius: ${({ large }) => (large ? '10px' : '50px')};
   padding: ${({ large }) => (large ? '1rem' : '0.5rem 1rem')};
-  margin: ${({ large }) => (large ? '1rem' : '3rem')};
+  margin: ${({ large }) => (large ? '1rem' : '')};
   width: ${({ large }) => (large ? '400px' : '200px')};
   height: ${({ large }) => (large ? '200px' : '')};
 

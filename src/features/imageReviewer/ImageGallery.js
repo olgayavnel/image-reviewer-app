@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const ImageGalleryWrapper = styled.div`
   background-color: blanchedalmond;
-  padding-bottom: 1rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -16,6 +15,7 @@ const ImageGalleryHeader = styled.p`
 const ImageContainer = styled.div`
   display: flex;
   margin-left: 1rem;
+  overflow-y: auto;
 
   img {
     max-height: 100px;

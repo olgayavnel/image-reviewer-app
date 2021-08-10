@@ -13,7 +13,10 @@ const FooterWrapper = styled.div`
   align-items: center;
 `;
 const FooterCopy = styled.p``;
-const ButtonWrapper = styled.div``;
+const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
 
 function Footer({ randomImageUrl, generateNewRandomImage }) {
   const dispatch = useDispatch();

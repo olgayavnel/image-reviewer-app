@@ -8,7 +8,6 @@ import { Button } from './Button';
 const ImagePickerWrapper = styled.div`
   background-color: #fbebcd;
   border-radius: 10px;
-  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,6 +18,7 @@ const ImageContainer = styled.div`
 
   img {
     max-height: 400px;
+    max-width: 550px;
     margin: 0.5rem;
     border-radius: 10px;
     object-fit: cover;
