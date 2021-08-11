@@ -27,10 +27,18 @@ const imagesSlice = createSlice({
   initialState,
   reducers: {
     imageApproved(state, action) {
-      state.approvedImageList.push(action.payload);
+      const url = action.payload;
+      if (!state.approvedImageList.includes(url)) {
+        state.approvedImageList.push(url);
+      }
+      // state.approvedImageList.push(action.payload);
     },
     imageRejected(state, action) {
-      state.rejectedImageList.push(action.payload);
+      const url = action.payload;
+      if (!state.rejectedImageList.includes(url)) {
+        state.rejectedImageList.push(url);
+      }
+      // state.rejectedImageList.push(action.payload);
     },
   },
 });

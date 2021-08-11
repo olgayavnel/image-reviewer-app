@@ -3,19 +3,22 @@ import styled from 'styled-components/macro';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { imageApproved, imageRejected } from '../../store/slices/imagesSlice';
-import { Button } from '../genericComponents/Button';
+import { Button, MenuButton } from '../genericComponents/Button';
 
 const FooterWrapper = styled.div`
-  background-color: blanchedalmond;
+  background-color: #fbebcd;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 `;
 const FooterCopy = styled.p``;
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 1rem;
+  margin: 0.5rem;
 `;
 
 function Footer({ randomImageUrl, generateNewRandomImage }) {
@@ -42,12 +45,10 @@ function Footer({ randomImageUrl, generateNewRandomImage }) {
         </FooterCopy>
       ) : (
         <ButtonWrapper>
-          <Button bgColorOnHover='true' onClick={onApprove}>
-            APPROVE
-          </Button>
-          <Button bgColorOnHover='true' onClick={onReject}>
+          <MenuButton onClick={onApprove}>APPROVE</MenuButton>
+          <MenuButton rejectedBgColor='true' onClick={onReject}>
             REJECT
-          </Button>
+          </MenuButton>
         </ButtonWrapper>
       )}
     </FooterWrapper>

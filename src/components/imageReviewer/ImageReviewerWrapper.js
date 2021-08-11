@@ -6,16 +6,16 @@ import ImagePicker from './ImagePicker';
 
 const Section = styled.section`
   background-color: #d1defe;
-  height: 100vh;
+  height: 100%;
   width: 600px;
-  margin: 1rem auto;
+  margin: 4rem auto;
   padding: 0.5rem;
   display: grid;
   gap: 0.5rem;
-  grid-template-rows: 0.2fr 1fr 2fr 1fr;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   font-size: 1.2rem;
+  letter-spacing: 0.2rem;
   overflow: auto;
 
   &::-webkit-scrollbar {
@@ -23,11 +23,13 @@ const Section = styled.section`
   }
 `;
 const Header = styled.div`
-  background-color: blanchedalmond;
+  background-color: #fbebcd;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  padding: 0.2rem;
 `;
 
 function ImageReviewerWrapper({ randomImageUrl, generateNewRandomImage }) {
