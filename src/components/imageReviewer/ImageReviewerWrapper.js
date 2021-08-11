@@ -37,7 +37,7 @@ const Header = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  padding: 0.2rem;
+  padding: 1rem;
 
   @media (max-width: 700px) {
     font-size: 1rem;

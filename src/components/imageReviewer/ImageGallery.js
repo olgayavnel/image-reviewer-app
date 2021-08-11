@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const ImageCarouselWrapper = styled.div`
   background-color: #fbebcd;
   border-radius: 10px;
-  padding: 0.2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: left;

@@ -9,7 +9,7 @@ import { FiPlus } from 'react-icons/fi';
 const ImagePickerWrapper = styled.div`
   background-color: #fbebcd;
   border-radius: 10px;
-  padding: 0.2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
