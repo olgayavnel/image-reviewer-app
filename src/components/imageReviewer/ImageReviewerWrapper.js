@@ -8,7 +8,7 @@ const Section = styled.section`
   background-color: #d1defe;
   height: 100%;
   width: 80%;
-  margin: 0 auto;
+  margin: 2rem auto 2rem;
   padding: 0.5rem;
   display: grid;
   gap: 0.5rem;
@@ -45,6 +45,11 @@ const Header = styled.div`
 
   @media (max-width: 440px) {
     font-size: 0.7rem;
+    padding: 0.5rem;
+  }
+
+  @media (max-width: 340px) {
+    font-size: 0.5rem;
   }
 `;
 

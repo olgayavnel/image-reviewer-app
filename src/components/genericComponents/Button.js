@@ -35,6 +35,11 @@ export const MenuButton = styled(Button)`
     width: 7rem;
     font-size: 0.7rem;
   }
+
+  @media (max-width: 340px) {
+    width: 6rem;
+    font-size: 0.5rem;
+  }
 `;
 
 export const LargeButton = styled(Button)`

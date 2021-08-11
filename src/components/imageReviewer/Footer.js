@@ -25,6 +25,10 @@ const FooterCopy = styled.p`
   @media (max-width: 440px) {
     font-size: 0.7rem;
   }
+
+  @media (max-width: 340px) {
+    font-size: 0.5rem;
+  }
 `;
 const ButtonWrapper = styled.div`
   display: flex;

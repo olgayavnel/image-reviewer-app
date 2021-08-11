@@ -1,7 +1,7 @@
 import { useFetchRandomImage } from './utils/useFetchRandomImage';
 import ImageReviewerWrapper from './components/imageReviewer/ImageReviewerWrapper';
 import Spinner from './components/genericComponents/Spinner';
-import './globalStyles.css';
+import GlobalStyle from './globalStyles';
 
 function App() {
   const [isLoading, randomImageUrl, generateNewRandomImage] =
@@ -13,10 +13,13 @@ function App() {
     return (
       <>
         {randomImageUrl && (
-          <ImageReviewerWrapper
-            randomImageUrl={randomImageUrl}
-            generateNewRandomImage={generateNewRandomImage}
-          />
+          <>
+            <GlobalStyle />
+            <ImageReviewerWrapper
+              randomImageUrl={randomImageUrl}
+              generateNewRandomImage={generateNewRandomImage}
+            />
+          </>
         )}
       </>
     );

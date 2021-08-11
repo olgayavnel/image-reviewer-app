@@ -23,6 +23,12 @@ const ImageCarouselHeader = styled.p`
 
   @media (max-width: 440px) {
     font-size: 0.7rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 340px) {
+    font-size: 0.5rem;
   }
 `;
 const ImageContainer = styled.div`
