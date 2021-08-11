@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { buttonClicked } from './../../store/slices/buttonsSlice';
-import { Button, LargeButton } from '../genericComponents/Button';
+import { LargeButton } from '../genericComponents/Button';
+import { FiPlus } from 'react-icons/fi';
 
 const ImagePickerWrapper = styled.div`
   background-color: #fbebcd;
@@ -19,10 +20,20 @@ const ImageContainer = styled.div`
   display: flex;
 
   img {
-    max-height: 400px;
-    max-width: 550px;
+    max-height: 30rem;
+    max-width: 30rem;
     margin: 0.5rem;
     border-radius: 10px;
+
+    @media (max-width: 700px) {
+      max-height: 20rem;
+      max-width: 20rem;
+    }
+
+    @media (max-width: 440px) {
+      max-height: 15rem;
+      max-width: 15rem;
+    }
   }
 `;
 
@@ -41,7 +52,9 @@ function ImagePicker({ randomImageUrl }) {
           <img id='unsplashImage' alt='unsplashImage' src={randomImageUrl} />
         </ImageContainer>
       ) : (
-        <LargeButton onClick={onButtonClick}>+</LargeButton>
+        <LargeButton onClick={onButtonClick}>
+          <FiPlus />
+        </LargeButton>
       )}
     </ImagePickerWrapper>
   );

@@ -3,7 +3,8 @@ import styled from 'styled-components/macro';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { imageApproved, imageRejected } from '../../store/slices/imagesSlice';
-import { Button, MenuButton } from '../genericComponents/Button';
+import { MenuButton } from '../genericComponents/Button';
+import { FiPlus } from 'react-icons/fi';
 
 const FooterWrapper = styled.div`
   background-color: #fbebcd;
@@ -14,7 +15,17 @@ const FooterWrapper = styled.div`
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 `;
-const FooterCopy = styled.p``;
+const FooterCopy = styled.p`
+  text-align: center;
+
+  @media (max-width: 700px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 0.7rem;
+  }
+`;
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 1rem;
@@ -41,7 +52,7 @@ function Footer({ randomImageUrl, generateNewRandomImage }) {
     <FooterWrapper>
       {showButton ? (
         <FooterCopy>
-          Click on the + in order to get image recommendations
+          Click on the {<FiPlus />} in order to get image recommendations
         </FooterCopy>
       ) : (
         <ButtonWrapper>

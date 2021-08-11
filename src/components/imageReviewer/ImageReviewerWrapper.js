@@ -7,8 +7,8 @@ import ImagePicker from './ImagePicker';
 const Section = styled.section`
   background-color: #d1defe;
   height: 100%;
-  width: 600px;
-  margin: 4rem auto;
+  width: 80%;
+  margin: 0 auto;
   padding: 0.5rem;
   display: grid;
   gap: 0.5rem;
@@ -17,11 +17,19 @@ const Section = styled.section`
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
   overflow: auto;
+  grid-template-columns: minmax(100px, 1fr);
+  position: relative;
+  top: 20px;
 
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (min-width: 1120px) {
+    width: 50%;
+  }
 `;
+
 const Header = styled.div`
   background-color: #fbebcd;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
@@ -30,6 +38,14 @@ const Header = styled.div`
   align-items: center;
   border-radius: 10px;
   padding: 0.2rem;
+
+  @media (max-width: 700px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 0.7rem;
+  }
 `;
 
 function ImageReviewerWrapper({ randomImageUrl, generateNewRandomImage }) {

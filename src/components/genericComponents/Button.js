@@ -19,11 +19,21 @@ export const MenuButton = styled(Button)`
   font-size: 1.3rem;
   border-radius: 50px;
   padding: 0.5rem 1rem;
-  width: 200px;
+  width: 15rem;
 
   &:hover {
     background-color: ${({ rejectedBgColor }) =>
       rejectedBgColor ? '#f5a979' : '#c5fac9'};
+  }
+
+  @media (max-width: 700px) {
+    width: 10rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 440px) {
+    width: 7rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -38,5 +48,11 @@ export const LargeButton = styled(Button)`
 
   &:hover {
     background-color: aliceblue;
+  }
+
+  @media (max-width: 700px) {
+    width: 10rem;
+    height: 5rem;
+    font-size: 1rem;
   }
 `;
