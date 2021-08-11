@@ -35,9 +35,9 @@ function ImageCarousel() {
     <ImageCarouselWrapper>
       <ImageCarouselHeader>APPROVED IMAGES (0)</ImageCarouselHeader>
       <ImageContainer>
-        {imageUrls.map((image, index) => (
-          <img key={index} src={image} alt='' />
-        ))}
+        {imageUrls
+          .map((image, index) => <img key={index} src={image} alt='' />)
+          .reverse()}
       </ImageContainer>
     </ImageCarouselWrapper>
   );

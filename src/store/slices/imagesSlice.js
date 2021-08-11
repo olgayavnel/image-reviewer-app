@@ -28,17 +28,9 @@ const imagesSlice = createSlice({
   reducers: {
     imageApproved(state, action) {
       state.approvedImageList.push(action.payload);
-      console.log(
-        '🚀 ~ file: imagesSlice.js ~ line 17 ~ imageApproved ~ action.payload',
-        action.payload
-      );
     },
     imageRejected(state, action) {
       state.rejectedImageList.push(action.payload);
-      console.log(
-        '🚀 ~ file: imagesSlice.js ~ line 21 ~ imageRejected ~ action.payload',
-        action.payload
-      );
     },
   },
 });

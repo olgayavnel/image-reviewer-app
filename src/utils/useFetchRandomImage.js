@@ -5,16 +5,16 @@ import { ENDPOINT } from './constants';
 export function useFetchRandomImage() {
   const [isLoading, setIsLoading] = useState(false);
   const [randomImageUrl, setRandomImgUrl] = useState('');
+  console.log(
+    '🚀 ~ file: useFetchRandomImage.js ~ line 8 ~ useFetchRandomImage ~ randomImageUrl',
+    randomImageUrl
+  );
 
   /** the useSelector hook lets our component extract whatever pieces of data it needs
    * from the Redux store state.
    */
   const rejectedImageList = useSelector(
     (state) => state.images.rejectedImageList
-  );
-
-  const approvedImageList = useSelector(
-    (state) => state.images.approvedImageList
   );
 
   function generateNewRandomImage() {
@@ -25,10 +25,7 @@ export function useFetchRandomImage() {
       })
       .then((data) => {
         const newUrl = data.urls.regular;
-        if (
-          rejectedImageList.includes(newUrl) ||
-          approvedImageList.includes(newUrl)
-        ) {
+        if (rejectedImageList.includes(newUrl)) {
           // fetch again
           generateNewRandomImage();
           return;
