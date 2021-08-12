@@ -15,21 +15,11 @@ const FooterWrapper = styled.div`
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 `;
+
 const FooterCopy = styled.p`
   text-align: center;
-
-  @media (max-width: 700px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 440px) {
-    font-size: 0.7rem;
-  }
-
-  @media (max-width: 340px) {
-    font-size: 0.5rem;
-  }
 `;
+
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 1rem;
@@ -60,9 +50,15 @@ function Footer({ randomImageUrl, generateNewRandomImage }) {
         </FooterCopy>
       ) : (
         <ButtonWrapper>
-          <MenuButton onClick={onApprove}>APPROVE</MenuButton>
-          <MenuButton rejectedBgColor='true' onClick={onReject}>
-            REJECT
+          <MenuButton onClick={onApprove}>
+            <p>APPROVE</p>
+          </MenuButton>
+          <MenuButton
+            rejectedBgColor='true'
+            rejectedBorderColor='true'
+            onClick={onReject}
+          >
+            <p>REJECT</p>
           </MenuButton>
         </ButtonWrapper>
       )}

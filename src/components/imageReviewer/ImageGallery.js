@@ -16,25 +16,14 @@ const ImageCarouselWrapper = styled.div`
 
 const ImageCarouselHeader = styled.p`
   margin-left: 1rem;
-
-  @media (max-width: 700px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 440px) {
-    font-size: 0.7rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  @media (max-width: 340px) {
-    font-size: 0.5rem;
-  }
 `;
+
 const ImageContainer = styled.div`
   display: inline;
   overflow-x: auto;
+  margin-top: 1rem;
   margin-left: 0.5rem;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -43,14 +32,6 @@ const ImageContainer = styled.div`
     max-height: 100px;
     margin: 0.5rem;
     border-radius: 10px;
-
-    @media (max-width: 700px) {
-      max-height: 5rem;
-    }
-
-    @media (max-width: 440px) {
-      max-height: 3rem;
-    }
   }
 `;
 

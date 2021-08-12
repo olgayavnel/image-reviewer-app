@@ -5,28 +5,26 @@ import ImageCarousel from './ImageGallery';
 import ImagePicker from './ImagePicker';
 
 const Section = styled.section`
+  min-height: clamp(100vh - 10%);
+  max-width: 600px;
   background-color: #d1defe;
-  height: 100%;
-  width: 80%;
-  margin: 2rem auto 2rem;
+  margin: 0 auto;
   padding: 0.5rem;
   display: grid;
   gap: 0.5rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  font-size: 1.2rem;
-  letter-spacing: 0.2rem;
   overflow: auto;
-  grid-template-columns: minmax(100px, 1fr);
-  position: relative;
-  top: 20px;
+  grid-template-columns: minmax(200px, 1fr);
+  grid-template-rows: 0.5fr 1r minmax(100px, 1fr) 0.5fr;
 
   &::-webkit-scrollbar {
     display: none;
   }
 
-  @media (min-width: 1120px) {
-    width: 50%;
+  @media (max-width: 660px) {
+    max-width: 80%;
+    max-height: 80%;
   }
 `;
 
@@ -38,19 +36,6 @@ const Header = styled.div`
   align-items: center;
   border-radius: 10px;
   padding: 1rem;
-
-  @media (max-width: 700px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 440px) {
-    font-size: 0.7rem;
-    padding: 0.5rem;
-  }
-
-  @media (max-width: 340px) {
-    font-size: 0.5rem;
-  }
 `;
 
 function ImageReviewerWrapper({ randomImageUrl, generateNewRandomImage }) {

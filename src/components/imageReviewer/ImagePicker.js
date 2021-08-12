@@ -16,24 +16,15 @@ const ImagePickerWrapper = styled.div`
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 `;
+
 const ImageContainer = styled.div`
   display: flex;
 
   img {
-    max-height: 30rem;
-    max-width: 30rem;
+    max-height: 20rem;
+    max-width: 20rem;
     margin: 0.5rem;
     border-radius: 10px;
-
-    @media (max-width: 700px) {
-      max-height: 20rem;
-      max-width: 20rem;
-    }
-
-    @media (max-width: 440px) {
-      max-height: 15rem;
-      max-width: 15rem;
-    }
   }
 `;
 

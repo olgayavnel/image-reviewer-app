@@ -1,19 +1,22 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+/** select all the elements on the page  */ 
 *{
     margin: 0;
-    padding: 0;
+    padding: 0rem;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 html, body {
-    overflow: auto;
-    height: 100vh;
-    width: 100vw;
-    background-color: #f3faff;
-    color: #2b4893;
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2b4893;
+    font-size: clamp(1rem, 1.2vw, 2rem);
 }
 `;
 
