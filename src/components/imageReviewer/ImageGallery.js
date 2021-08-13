@@ -48,14 +48,21 @@ const ImageContainer = styled.div`
 `;
 
 function ImageCarousel() {
-  const imageUrls = useSelector((state) => state.images.approvedImageList);
-  const imageCount = imageUrls.length;
+  const randomImageObject = useSelector(
+    (state) => state.images.approvedImageList
+  );
+
+  const randomImageUrls = randomImageObject.map(
+    (image) => image.randomImageUrl
+  );
+
+  const imageCount = randomImageUrls.length;
 
   return (
     <ImageCarouselWrapper>
       <ImageCarouselHeader>APPROVED IMAGES ({imageCount})</ImageCarouselHeader>
       <ImageContainer>
-        {imageUrls
+        {randomImageUrls
           .map((image, index) => <img key={index} src={image} alt='' />)
           .reverse()}
       </ImageContainer>

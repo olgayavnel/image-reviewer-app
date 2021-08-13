@@ -5,23 +5,21 @@ import GlobalStyle from './globalStyles';
 import ErrorBoundary from './utils/ErrorBoundary';
 
 function App() {
-  const [isLoading, randomImageUrl, generateNewRandomImage] =
+  const [isLoading, randomImage, generateNewRandomImageArray] =
     useFetchRandomImage();
 
   if (isLoading) {
-    <ErrorBoundary>
-      return <Spinner />;
-    </ErrorBoundary>;
+    return <Spinner />;
   }
 
   return (
     <>
-      {randomImageUrl && (
+      {randomImage && (
         <ErrorBoundary>
           <GlobalStyle />
           <ImageReviewerWrapper
-            randomImageUrl={randomImageUrl}
-            generateNewRandomImage={generateNewRandomImage}
+            randomImage={randomImage}
+            generateNewRandomImageArray={generateNewRandomImageArray}
           />
         </ErrorBoundary>
       )}

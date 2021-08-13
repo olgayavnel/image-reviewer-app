@@ -44,15 +44,15 @@ const Header = styled.div`
   text-align: center;
 `;
 
-function ImageReviewerWrapper({ randomImageUrl, generateNewRandomImage }) {
+function ImageReviewerWrapper({ randomImage, generateNewRandomImageArray }) {
   return (
     <Section>
       <Header>
         <p>YOUR PERSONAL IMAGE ASSISTENT</p>
       </Header>
       <ImageCarousel />
-      <ImagePicker randomImageUrl={randomImageUrl} />
-      <Footer randomImageUrl={randomImageUrl} {...{ generateNewRandomImage }} />
+      <ImagePicker randomImage={randomImage} />
+      <Footer randomImage={randomImage} {...{ generateNewRandomImageArray }} />
     </Section>
   );
 }
