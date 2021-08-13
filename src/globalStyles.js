@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-/** select all the elements on the page  */ 
+/** * selects all the elements on the page  */ 
 *{
     margin: 0;
     padding: 0rem;
@@ -16,7 +16,6 @@ html, body {
     justify-content: center;
     align-items: center;
     color: #2b4893;
-    font-size: clamp(1rem, 1.2vw, 2rem);
 }
 `;
 

@@ -21,16 +21,23 @@ const ImageCarouselHeader = styled.p`
 const ImageContainer = styled.div`
   display: inline;
   overflow-x: auto;
-  margin-top: 1rem;
   margin-left: 0.5rem;
 
   &::-webkit-scrollbar {
-    display: none;
+    /* display: none; */
+    display: block;
+    width: 1x;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #d0dffe;
+    border-radius: 20px;
   }
 
   img {
-    max-height: 100px;
-    margin: 0.5rem;
+    height: 100%;
+    max-height: 70px;
+    margin: 1rem 0.5rem 0.5rem;
     border-radius: 10px;
   }
 `;

@@ -7,22 +7,27 @@ const Button = styled.button`
   cursor: pointer;
   text-decoration: none;
   border: 3px solid #d1defe;
-  letter-spacing: 0.2rem;
 `;
 
 export const MenuButton = styled(Button)`
   background-color: #d1defe;
-  font-size: 1.3rem;
   border-radius: 50px;
   padding: 0.5rem 1rem;
-  width: min(15rem 100px);
-  font-size: clamp(1rem, 1vw, 2.8rem);
+  max-width: 200px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
 
   &:hover {
     background-color: ${({ rejectedBgColor }) =>
       rejectedBgColor ? '#f5a979' : '#c5fac9'};
     border: ${({ rejectedBorderColor }) =>
       rejectedBorderColor ? '3px solid #f5a979' : '3px solid #c5fac9'};
+  }
+
+  @media (max-width: 660px) {
+    max-width: 80%;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
   }
 `;
 
@@ -31,8 +36,7 @@ export const LargeButton = styled(Button)`
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem;
-  background-color: green;
-  font-size: 2vw;
+  font-size: 2rem;
   width: 200px;
   height: 200px;
 

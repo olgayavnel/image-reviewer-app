@@ -15,14 +15,10 @@ const ImagePickerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
-`;
-
-const ImageContainer = styled.div`
-  display: flex;
 
   img {
-    max-height: 20rem;
-    max-width: 20rem;
+    max-height: 20vw;
+    max-width: 100%;
     margin: 0.5rem;
     border-radius: 10px;
   }
@@ -39,9 +35,7 @@ function ImagePicker({ randomImageUrl }) {
   return (
     <ImagePickerWrapper>
       {!showButton ? (
-        <ImageContainer>
-          <img id='unsplashImage' alt='unsplashImage' src={randomImageUrl} />
-        </ImageContainer>
+        <img id='unsplashImage' alt='unsplashImage' src={randomImageUrl} />
       ) : (
         <LargeButton onClick={onButtonClick}>
           <FiPlus />
