@@ -6,14 +6,11 @@ export function useFetchRandomImage() {
   const [isLoading, setIsLoading] = useState(false);
   const [randomImages, setRandomImage] = useState({});
 
-  /** the useSelector hook lets our component extract whatever pieces of data it needs
-   * from the Redux store state.
-   */
   const rejectedImageList = useSelector(
     (state) => state.images.rejectedImageList
   );
 
-  function generateNewRandomImageArray() {
+  function generateNewRandomImage() {
     setIsLoading(true);
     fetch(ENDPOINT)
       .then((response) => {
@@ -25,7 +22,7 @@ export function useFetchRandomImage() {
         const rejectedImageListIds = rejectedImageList.map((image) => image.id);
         if (rejectedImageListIds.includes(newId)) {
           // fetch again
-          generateNewRandomImageArray();
+          generateNewRandomImage();
           return;
         }
         setIsLoading(false);
@@ -37,7 +34,7 @@ export function useFetchRandomImage() {
   }
 
   // do it right away once
-  useEffect(generateNewRandomImageArray, []);
+  useEffect(generateNewRandomImage, []);
 
-  return [isLoading, randomImages, generateNewRandomImageArray];
+  return [isLoading, randomImages, generateNewRandomImage];
 }

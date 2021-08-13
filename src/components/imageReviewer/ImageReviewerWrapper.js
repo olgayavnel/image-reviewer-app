@@ -44,7 +44,7 @@ const Header = styled.div`
   text-align: center;
 `;
 
-function ImageReviewerWrapper({ randomImage, generateNewRandomImageArray }) {
+function ImageReviewerWrapper({ randomImage, generateNewRandomImage }) {
   return (
     <Section>
       <Header>
@@ -52,7 +52,7 @@ function ImageReviewerWrapper({ randomImage, generateNewRandomImageArray }) {
       </Header>
       <ImageCarousel />
       <ImagePicker randomImage={randomImage} />
-      <Footer randomImage={randomImage} {...{ generateNewRandomImageArray }} />
+      <Footer randomImage={randomImage} {...{ generateNewRandomImage }} />
     </Section>
   );
 }

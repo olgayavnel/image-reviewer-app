@@ -26,18 +26,17 @@ const ButtonWrapper = styled.div`
   margin: 0.5rem;
 `;
 
-function Footer({ randomImage, generateNewRandomImageArray }) {
+function Footer({ randomImage, generateNewRandomImage }) {
   const dispatch = useDispatch();
 
   function onApprove() {
     dispatch(imageApproved(randomImage));
-    generateNewRandomImageArray();
+    generateNewRandomImage();
   }
 
   function onReject() {
-    // under the question ?
     dispatch(imageRejected(randomImage));
-    generateNewRandomImageArray();
+    generateNewRandomImage();
   }
 
   const showButton = useSelector((state) => state.buttons.showButton);

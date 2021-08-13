@@ -5,7 +5,7 @@ import GlobalStyle from './globalStyles';
 import ErrorBoundary from './utils/ErrorBoundary';
 
 function App() {
-  const [isLoading, randomImage, generateNewRandomImageArray] =
+  const [isLoading, randomImage, generateNewRandomImage] =
     useFetchRandomImage();
 
   if (isLoading) {
@@ -19,7 +19,7 @@ function App() {
           <GlobalStyle />
           <ImageReviewerWrapper
             randomImage={randomImage}
-            generateNewRandomImageArray={generateNewRandomImageArray}
+            generateNewRandomImage={generateNewRandomImage}
           />
         </ErrorBoundary>
       )}
