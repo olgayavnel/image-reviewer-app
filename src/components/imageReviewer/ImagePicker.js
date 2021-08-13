@@ -18,7 +18,7 @@ const ImagePickerWrapper = styled.div`
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 
   img {
-    height: 40vh;
+    max-height: 30vh;
     max-width: 100%;
     margin: 0.5rem;
     border-radius: 10px;

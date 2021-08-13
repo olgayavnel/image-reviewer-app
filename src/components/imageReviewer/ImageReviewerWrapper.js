@@ -13,7 +13,6 @@ const Section = styled.section`
   display: grid;
   gap: 0.8rem;
   grid-template-columns: minmax(200px, 500px);
-  grid-template-rows: 0.5fr 1r 1fr 0.5fr;
   overflow: auto;
 
   background-color: #d1defe;
@@ -30,6 +29,11 @@ const Section = styled.section`
     max-width: 80%;
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
+  }
+
+  @media (max-width: 320px) {
+    max-height: 500px;
+    grid-template-rows: 0.2fr 1fr fr 0.5fr;
   }
 `;
 
