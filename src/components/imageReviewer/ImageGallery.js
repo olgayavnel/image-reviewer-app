@@ -24,14 +24,19 @@ const ImageContainer = styled.div`
   margin-left: 0.5rem;
 
   &::-webkit-scrollbar {
-    /* display: none; */
     display: block;
-    width: 1x;
+    width: 1px;
+    height: 0.7rem;
+
+    @media (max-width: 660px) {
+      height: 0.5rem;
+    }
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: #d0dffe;
     border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
   }
 
   img {
