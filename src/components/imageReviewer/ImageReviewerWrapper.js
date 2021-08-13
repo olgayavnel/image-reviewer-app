@@ -48,7 +48,7 @@ function ImageReviewerWrapper({ randomImageUrl, generateNewRandomImage }) {
   return (
     <Section>
       <Header>
-        <p>IMAGE APPROVAL APPLICATION</p>
+        <p>YOUR PERSONAL IMAGE ASSISTENT</p>
       </Header>
       <ImageCarousel />
       <ImagePicker randomImageUrl={randomImageUrl} />
