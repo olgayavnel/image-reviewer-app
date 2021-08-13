@@ -1,2 +1,2 @@
-const CLIENT_ID = 'M4jkavYKGGW9j8M9BV_dpcnp5vrQ2eRpDYQqj8XMrQQ';
-export const ENDPOINT = `https://api.unsplash.com/photos/random/?count=10&client_id=${CLIENT_ID}`;
+const CLIENT_ID = '3JzHv73K5tWmHynOE8Uo4XLmI4hEPPx7ArFRVDWLg-0';
+export const ENDPOINT = `https://api.unsplash.com/photos/random/?client_id=${CLIENT_ID}`;
