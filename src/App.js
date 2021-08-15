@@ -1,8 +1,7 @@
-import { useFetchRandomImage } from './utils/useFetchRandomImage';
-import ImageReviewerWrapper from './components/imageReviewer/ImageReviewerWrapper';
-import Spinner from './components/genericComponents/Spinner';
 import GlobalStyle from './globalStyles';
-import ErrorBoundary from './utils/ErrorBoundary';
+import Spinner from './components/Spinner';
+import Wrapper from './components/Wrapper/Wrapper';
+import { useFetchRandomImage } from './hooks/useFetchRandomImage';
 
 function App() {
   const [isLoading, randomImage, generateNewRandomImage] =
@@ -15,13 +14,13 @@ function App() {
   return (
     <>
       {randomImage && (
-        <ErrorBoundary>
+        <>
           <GlobalStyle />
-          <ImageReviewerWrapper
+          <Wrapper
             randomImage={randomImage}
             generateNewRandomImage={generateNewRandomImage}
           />
-        </ErrorBoundary>
+        </>
       )}
     </>
   );

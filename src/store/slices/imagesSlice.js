@@ -1,4 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+// export const getImages = createAsyncThunk(
+//   'images/getImages',
+//   async () => {
+//     return fetch(ENDPOINT).then((response) => {
+//       return response.json()
+//     })
+//   }
+// )
 
 const initialState = {
   approvedImageList: [],
@@ -25,6 +34,19 @@ const imagesSlice = createSlice({
       const randomImageObject = action.payload;
       state.rejectedImageList.push(randomImageObject);
     },
+
+    // extraReducers: {
+    //   [getImages.pending] : (state, action) => {
+    //     state.isLoading = true
+    //   },
+    //   [getImages.fulfilled] : (state, {payload}) => {
+    //     state.isLoading = false
+    //     state.randomImage = payload
+    //   }
+    //   [getImages.rejected] : (state, action) => {
+    //     state.isLoading = true
+    //   }
+    // }
   },
 });
 
