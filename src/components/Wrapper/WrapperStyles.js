@@ -28,7 +28,7 @@ export const Section = styled.section`
   }
 
   @media (max-width: 320px) {
-    max-height: 500px;
+    max-height: 600px;
     grid-template-rows: 0.2fr 1fr fr 0.5fr;
   }
 `;

@@ -20,7 +20,7 @@ function ImageCarousel() {
   return (
     <ImageCarouselWrapper>
       <ImageCarouselHeader>APPROVED IMAGES ({imageCount})</ImageCarouselHeader>
-      <ImageContainer>
+      <ImageContainer data-testid="carousel-images">
         {randomImageUrls
           .map((image, index) => <img key={index} src={image} alt='' />)
           .reverse()}

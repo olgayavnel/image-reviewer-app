@@ -3,23 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { store, persistor } from './store/store';
+import { initializeStore, persistor } from './store/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ErrorBoundary } from 'react-error-boundary';
-
-function ErrorFallback({ error, resetErrorBoundary }) {
-  return (
-    <div role='alert'>
-      <p>Something went wrong:</p>
-      <pre>{error.message}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
-    </div>
-  );
-}
+import ErrorFallback from './ErrorFallback';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={initializeStore()}>
       <PersistGate loading={null} persistor={persistor}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <App />

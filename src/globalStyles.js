@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-/** * selects all the elements on the page  */ 
 *{
     margin: 0;
     padding: 0rem;

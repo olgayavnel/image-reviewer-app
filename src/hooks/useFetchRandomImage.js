@@ -34,7 +34,7 @@ export function useFetchRandomImage() {
       });
   }, [rejectedImageList]);
 
-  // do it right away once
+  // we do it right away once
   useEffect(() => {
     generateNewRandomImage();
   }, [generateNewRandomImage]);
